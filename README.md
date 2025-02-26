@@ -1,45 +1,46 @@
-# 📊 ExcelDataExtractor
+# 📊 Excel Data Extractor
 
-ExcelDataExtractor é um serviço desenvolvido em Java com Spring Boot para extrair e processar dados de arquivos Excel. Ele utiliza a biblioteca Apache POI para manipulação de arquivos `.xlsx`, convertendo os dados em objetos Java acessíveis via API REST.
+Excel Data Extractor é uma aplicação Java baseada em Spring Boot para extração e processamento de dados de arquivos Excel (`.xlsx`). Utiliza a biblioteca Apache POI para manipulação de planilhas e expõe uma API REST para receber e processar os arquivos.
 
 ## 🚀 Funcionalidades
 - 📂 Upload de arquivos Excel
-- 🔄 Conversão automática dos dados em objetos Java
-- 🖥️ API REST para consulta dos dados extraídos
+- 🔄 Extração automática dos dados e conversão para objetos Java
+- 🖥️ API REST para consumo dos dados extraídos
 - 📝 Log integrado para monitoramento de erros
+- 📑 Documentação automática com Swagger UI
 
 ## 🛠 Tecnologias Utilizadas
 - **Java 17+**
 - **Spring Boot**
 - **Apache POI**
 - **Lombok**
+- **Gradle**
+- **Swagger UI**
 
-## 📦 Instalação e Uso
-1. Clone este repositório:
+## 📦 Como Executar o Projeto
+
+1. **Clone este repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/ExcelDataExtractor.git
+   git clone https://github.com/seu-usuario/excel-data-extractor.git
    ```
-2. Acesse o diretório do projeto:
+2. **Acesse o diretório do projeto:**
    ```bash
-   cd ExcelDataExtractor
+   cd excel-data-extractor
    ```
-3. Instale as dependências e compile o projeto:
+3. **Compile e execute a aplicação:**
    ```bash
-   mvn clean install
-   ```
-4. Execute a aplicação:
-   ```bash
-   mvn spring-boot:run
+   ./gradlew bootRun
    ```
 
 ## 📡 Endpoints da API
-### 📤 Upload de arquivo Excel
+
+### 📤 Upload de Arquivo Excel
 ```http
 POST /excel
 ```
-**Parâmetro:** MultipartFile `file`
+**Parâmetro:** `file` (MultipartFile)
 
-### 📋 Retorno esperado
+### 📋 Exemplo de Resposta
 ```json
 [
   {
@@ -52,6 +53,16 @@ POST /excel
   }
 ]
 ```
+
+## 📖 Documentação da API
+A documentação da API está disponível via Swagger UI. Após iniciar a aplicação, acesse:
+```
+http://localhost:8080/swagger-ui.html
+```
+
+## 📜 Licença
+Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e modificá-lo conforme necessário.
+
 ---
 **Desenvolvido por Lucas Ferreira** 🚀
 
