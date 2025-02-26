@@ -36,7 +36,7 @@ Excel Data Extractor é uma aplicação Java baseada em Spring Boot para extraç
 
 ### 📤 Upload de Arquivo Excel
 ```http
-POST /excel
+POST /ExcelDataExtractor
 ```
 **Parâmetro:** `file` (MultipartFile)
 
