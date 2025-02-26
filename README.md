@@ -63,10 +63,6 @@ http://localhost:8080/swagger-ui.html
 ## 📁 Arquivo de Exemplo
 Para testar a API, utilize o seguinte arquivo de exemplo:
 [📄 nomes_idades.xlsx](exemple/nomes_idades.xlsx)
-
-## 📜 Licença
-Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e modificá-lo conforme necessário.
-
 ---
 **Desenvolvido por Lucas Ferreira** 🚀
 
