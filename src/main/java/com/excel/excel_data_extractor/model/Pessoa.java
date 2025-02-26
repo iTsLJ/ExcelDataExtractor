@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Person {
+public class Pessoa {
     private String nome;
     private Integer idade;
 

@@ -1,7 +1,7 @@
 package com.excel.excel_data_extractor.controller;
 
 
-import com.excel.excel_data_extractor.model.Person;
+import com.excel.excel_data_extractor.model.Pessoa;
 import com.excel.excel_data_extractor.service.ExcelService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +23,7 @@ public class ExcellController {
     }
 
     @PostMapping(value = "/ExcelDataExtractor", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<List<Person>> extract(@RequestParam MultipartFile file) {
+    public ResponseEntity<List<Pessoa>> extract(@RequestParam MultipartFile file) {
         return ResponseEntity.ok(excelService.extract(file));
     }
 }

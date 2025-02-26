@@ -1,6 +1,6 @@
 package com.excel.excel_data_extractor.service;
 
-import com.excel.excel_data_extractor.model.Person;
+import com.excel.excel_data_extractor.model.Pessoa;
 import lombok.extern.log4j.Log4j2;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbookFactory;
@@ -14,8 +14,8 @@ import java.util.List;
 @Log4j2
 public class ExcelService {
 
-    public List<Person> extract(MultipartFile file) {
-        List<Person> personList = new ArrayList<>();
+    public List<Pessoa> extract(MultipartFile file) {
+        List<Pessoa> pessoasList = new ArrayList<>();
 
         try {
             Workbook workbook = new XSSFWorkbookFactory().create(file.getInputStream());
@@ -24,25 +24,25 @@ public class ExcelService {
             for (int rowIndex = 1; rowIndex < sheet.getPhysicalNumberOfRows(); rowIndex++) {
                 Row row = sheet.getRow(rowIndex);
                 if (row != null) {
-                    Person person = new Person();
+                    Pessoa pessoas = new Pessoa();
 
                     Cell nomeCell = row.getCell(0, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
                     if (nomeCell != null) {
-                        person.setNome(nomeCell.getStringCellValue());
+                        pessoas.setNome(nomeCell.getStringCellValue());
                     }
 
                     Cell idadeCell = row.getCell(1, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
                     if (idadeCell != null && idadeCell.getCellType() == CellType.NUMERIC) {
-                        person.setIdade((int) idadeCell.getNumericCellValue());
+                        pessoas.setIdade((int) idadeCell.getNumericCellValue());
                     }
 
-                    personList.add(person);
+                    pessoasList.add(pessoas);
                 }
             }
         } catch (Exception e) {
-            log.error("Error extracting excel file: {}", e.getMessage());
+            log.error("Erro ao extrar o arquivo excel(xlsx): {}", e.getMessage());
         }
-        return personList;
+        return pessoasList;
     }
 }
 //    private String validateCell(Cell cell) {
