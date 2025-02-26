@@ -10,7 +10,7 @@ Excel Data Extractor é uma aplicação Java baseada em Spring Boot para extraç
 - 📑 Documentação automática com Swagger UI
 
 ## 🛠 Tecnologias Utilizadas
-- **Java 17+**
+- **Java 21+**
 - **Spring Boot**
 - **Apache POI**
 - **Lombok**
