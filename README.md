@@ -10,7 +10,7 @@ Excel Data Extractor é uma aplicação Java baseada em Spring Boot para extraç
 - 📑 Documentação automática com Swagger UI
 
 ## 🛠 Tecnologias Utilizadas
-- **Java 21+**
+- **Java 17+**
 - **Spring Boot**
 - **Apache POI**
 - **Lombok**
@@ -36,7 +36,7 @@ Excel Data Extractor é uma aplicação Java baseada em Spring Boot para extraç
 
 ### 📤 Upload de Arquivo Excel
 ```http
-POST /ExcelDataExtractor
+POST /excel
 ```
 **Parâmetro:** `file` (MultipartFile)
 
@@ -59,6 +59,10 @@ A documentação da API está disponível via Swagger UI. Após iniciar a aplica
 ```
 http://localhost:8080/swagger-ui.html
 ```
+
+## 📁 Arquivo de Exemplo
+Para testar a API, utilize o seguinte arquivo de exemplo:
+[📄 nomes_idades.xlsx](exemple/nomes_idades.xlsx)
 
 ## 📜 Licença
 Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e modificá-lo conforme necessário.
