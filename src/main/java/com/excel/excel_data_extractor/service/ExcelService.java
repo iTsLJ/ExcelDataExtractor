@@ -15,7 +15,7 @@ import java.util.List;
 public class ExcelService {
 
     public List<Pessoa> extract(MultipartFile file) {
-        List<Pessoa> pessoasList = new ArrayList<>();
+        List<Pessoa> pessoaList = new ArrayList<>();
 
         try {
             Workbook workbook = new XSSFWorkbookFactory().create(file.getInputStream());
@@ -24,25 +24,25 @@ public class ExcelService {
             for (int rowIndex = 1; rowIndex < sheet.getPhysicalNumberOfRows(); rowIndex++) {
                 Row row = sheet.getRow(rowIndex);
                 if (row != null) {
-                    Pessoa pessoas = new Pessoa();
+                    Pessoa pessoa = new Pessoa();
 
                     Cell nomeCell = row.getCell(0, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
                     if (nomeCell != null) {
-                        pessoas.setNome(nomeCell.getStringCellValue());
+                        pessoa.setNome(nomeCell.getStringCellValue());
                     }
 
                     Cell idadeCell = row.getCell(1, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
                     if (idadeCell != null && idadeCell.getCellType() == CellType.NUMERIC) {
-                        pessoas.setIdade((int) idadeCell.getNumericCellValue());
+                        pessoa.setIdade((int) idadeCell.getNumericCellValue());
                     }
 
-                    pessoasList.add(pessoas);
+                    pessoaList.add(pessoa);
                 }
             }
         } catch (Exception e) {
             log.error("Erro ao extrar o arquivo excel(xlsx): {}", e.getMessage());
         }
-        return pessoasList;
+        return pessoaList;
     }
 }
 //    private String validateCell(Cell cell) {
