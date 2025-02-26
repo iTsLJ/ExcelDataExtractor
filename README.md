@@ -59,10 +59,9 @@ A documentação da API está disponível via Swagger UI. Após iniciar a aplica
 ```
 http://localhost:8080/swagger-ui.html
 ```
-
 ## 📁 Arquivo de Exemplo
 Para testar a API, utilize o seguinte arquivo de exemplo:
 [📄 nomes_idades.xlsx](exemple/nomes_idades.xlsx)
----
-**Desenvolvido por Lucas Ferreira** 🚀
 
+---
+**Desenvolvido por Lucas Ferreira** 
