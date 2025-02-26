@@ -25,7 +25,7 @@ Excel Data Extractor é uma aplicação Java baseada em Spring Boot para extraç
    ```
 2. **Acesse o diretório do projeto:**
    ```bash
-   cd excel-data-extractor
+   cd ExcelDataExtractor
    ```
 3. **Compile e execute a aplicação:**
    ```bash
